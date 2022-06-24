@@ -5,7 +5,7 @@ metadata:
   labels:
     app: abhiapp1
   name: abhiapp1
-  name: abhi-project
+  namespace: abhi-project
 spec:
   replicas: 1
   selector:
