@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: abhiapp1
+  name: abhiapp1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: abhiapp1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: abhiapp1
+    spec:
+      containers:
+      - image: abhimobi007/testjenpush:appv1
+        name: testjenpush
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
