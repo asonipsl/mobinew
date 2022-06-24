@@ -5,6 +5,7 @@ metadata:
   labels:
     app: abhiapp1
   name: abhiapp1
+  name: abhi-project
 spec:
   replicas: 1
   selector:
@@ -24,3 +25,25 @@ spec:
         - containerPort: 80
         resources: {}
 status: {}
+
+# Adding service 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: abhisvc1
+  name: abhisvc1
+  namespace: abhi-project
+spec:
+  ports:
+  - name: 1432-80
+    port: 1432
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: abhiapp1
+  type: NodePort
+status:
+  loadBalancer: {}
