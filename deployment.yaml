@@ -23,6 +23,9 @@ spec:
         name: testjenpush
         ports:
         - containerPort: 80
+        env:
+        - name: deploy
+          value: app1
         resources: {}
         imagePullPolicy: Always
 
